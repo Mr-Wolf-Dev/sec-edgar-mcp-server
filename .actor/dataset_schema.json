@@ -1,0 +1,61 @@
+{
+  "actorSpecification": 1,
+  "fields": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+      "filingId": { "type": "string", "description": "Canonical filing ID (cik:accessionNumber)." },
+      "cik": { "type": "string", "description": "10-digit zero-padded SEC CIK." },
+      "companyName": { "type": "string", "description": "Company legal name." },
+      "ticker": { "type": ["string", "null"], "description": "Primary stock ticker symbol." },
+      "sic": { "type": ["string", "null"], "description": "SIC industry code." },
+      "sicDescription": { "type": ["string", "null"], "description": "SIC industry description." },
+      "accessionNumber": { "type": "string", "description": "SEC accession number." },
+      "form": { "type": "string", "description": "SEC form type (10-K, 10-Q, 8-K, 4, etc.)." },
+      "filingDate": { "type": "string", "description": "Filing date (YYYY-MM-DD)." },
+      "reportDate": { "type": ["string", "null"], "description": "Period report date (YYYY-MM-DD)." },
+      "primaryDocument": { "type": ["string", "null"], "description": "Primary filing document filename." },
+      "description": { "type": ["string", "null"], "description": "Filing description." },
+      "documentUrl": { "type": "string", "description": "Direct URL to primary SEC filing document." },
+      "secIndexUrl": { "type": "string", "description": "URL to SEC EDGAR filing index page." }
+    },
+    "required": [
+      "filingId",
+      "cik",
+      "companyName",
+      "accessionNumber",
+      "form",
+      "filingDate",
+      "documentUrl",
+      "secIndexUrl"
+    ]
+  },
+  "views": {
+    "overview": {
+      "title": "SEC Filings Overview",
+      "transformation": {
+        "fields": [
+          "ticker",
+          "companyName",
+          "form",
+          "filingDate",
+          "reportDate",
+          "description",
+          "documentUrl"
+        ]
+      },
+      "display": {
+        "component": "table",
+        "properties": {
+          "ticker": { "label": "Ticker", "format": "text" },
+          "companyName": { "label": "Company", "format": "text" },
+          "form": { "label": "Form", "format": "text" },
+          "filingDate": { "label": "Filed", "format": "date" },
+          "reportDate": { "label": "Period", "format": "date" },
+          "description": { "label": "Description", "format": "text" },
+          "documentUrl": { "label": "Document", "format": "link" }
+        }
+      }
+    }
+  }
+}

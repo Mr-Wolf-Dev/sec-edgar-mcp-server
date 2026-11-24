@@ -1,0 +1,14 @@
+{
+  "actorSpecification": 1,
+  "name": "sec-edgar-mcp-server",
+  "title": "SEC EDGAR Filings & Financials Monitor + MCP",
+  "description": "Keyless HTTP-only Apify Actor & Standby MCP Server extracting SEC EDGAR filings (10-K, 10-Q, 8-K, Form 4), company profiles, and XBRL financial metrics.",
+  "version": "0.1",
+  "usesStandbyMode": true,
+  "input": "./input_schema.json",
+  "output": "./output_schema.json",
+  "dockerfile": "../Dockerfile",
+  "storages": {
+    "dataset": "./dataset_schema.json"
+  }
+}

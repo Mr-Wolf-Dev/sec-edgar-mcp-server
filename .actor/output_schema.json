@@ -1,0 +1,20 @@
+{
+  "actorOutputSchemaVersion": 1,
+  "title": "SEC EDGAR Filings & Financials Output",
+  "description": "Normalized SEC EDGAR filings extracted by SEC EDGAR Filings & Financials Monitor.",
+  "type": "object",
+  "properties": {
+    "overview": {
+      "type": "string",
+      "title": "Filings Overview",
+      "description": "Table view of normalized SEC EDGAR filings.",
+      "template": "{{links.apiDefaultDatasetUrl}}/items?view=overview"
+    },
+    "dataset": {
+      "type": "string",
+      "title": "Full Filings Dataset (JSON)",
+      "description": "Complete JSON dataset of normalized SEC EDGAR filings.",
+      "template": "{{links.apiDefaultDatasetUrl}}/items"
+    }
+  }
+}

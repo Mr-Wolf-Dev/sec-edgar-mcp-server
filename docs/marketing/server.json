@@ -1,0 +1,32 @@
+{
+  "name": "sec-edgar-mcp-server",
+  "displayName": "SEC EDGAR Filings & Financials Monitor (10-K, 10-Q, 8-K, Form 4)",
+  "version": "0.1.0",
+  "vendor": "mrWolf",
+  "description": "Keyless Streamable HTTP MCP server & Apify Actor for searching SEC EDGAR filings (10-K, 10-Q, 8-K, Form 4), company profiles, and structured XBRL financial metrics.",
+  "homepage": "https://apify.com/mr.wolf/sec-edgar-mcp-server",
+  "transport": {
+    "type": "streamable-http",
+    "url": "https://mr-wolf-1--sec-edgar-mcp-server.apify.actor/mcp",
+    "authentication": {
+      "type": "bearer",
+      "header": "Authorization",
+      "prefix": "Bearer "
+    }
+  },
+  "tools": [
+    {
+      "name": "search_sec_filings",
+      "description": "Search and filter official SEC EDGAR filings (10-K, 10-Q, 8-K, Form 4) by ticker or CIK."
+    },
+    {
+      "name": "get_company_profile",
+      "description": "Fetch SEC EDGAR company profile (CIK, SIC, tickers, exchanges, fiscal year end)."
+    },
+    {
+      "name": "get_company_financials",
+      "description": "Fetch latest structured XBRL financial metrics (revenue, netIncome, assets, liabilities, cash, EPS) from SEC EDGAR."
+    }
+  ],
+  "categories": ["finance", "business", "search"]
+}
