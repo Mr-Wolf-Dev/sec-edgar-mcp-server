@@ -1,0 +1,17 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.Mr-Wolf-Dev/sec-edgar-mcp-server",
+  "title": "SEC EDGAR Filings & Financials Monitor + MCP",
+  "description": "Keyless HTTP-only Apify Actor & Standby MCP Server extracting SEC EDGAR filings (10-K, 10-Q, 8-K, Fo",
+  "repository": {
+    "url": "https://github.com/Mr-Wolf-Dev/sec-edgar-mcp-server",
+    "source": "github"
+  },
+  "version": "0.1.0",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://mr-wolf-1--sec-edgar-mcp-server.apify.actor/mcp"
+    }
+  ]
+}
